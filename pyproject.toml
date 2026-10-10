@@ -1,6 +1,6 @@
 [project]
 name = "base85-zeroflush-decoder"
-version = "0.1.0"
+version = "0.1.1"
 description = "Encodes and decodes ZeroMQ Z85 encoding, a variant of Ascii85 for use in ZeroMQ protocol."
 requires-python = ">=3.10"
 dependencies = []
