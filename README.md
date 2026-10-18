@@ -17,3 +17,10 @@ Z85 is the Ascii85 variant used by ZeroMQ for keys and CURVE handshakes. It has 
 - `encode` raises `Z85Error` if the input length is not a multiple of 4. There is no padding.
 - `decode` raises `Z85Error` if the text length is not a multiple of 5 or contains a character outside the Z85 alphabet.
 - Empty input is valid and round-trips to empty output.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
